@@ -5,7 +5,9 @@ var client = new Twitter(keys.twitter);
 
 const Twitter = require('twitter');
 const Spotify = require('node-spotify-api');
-const imdb = require('omdb');
+const omdb = require('omdb');
+
+const queryURL = "https://api.twitter.com/1.1/statuses/home_timeline.json&count=20&";
 
 // commands:
 // my-tweets - show last 20 tweets and when they were created
