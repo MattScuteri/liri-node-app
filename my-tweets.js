@@ -8,7 +8,11 @@ const showTweets = function() {
 	})
 
 	.done(function(response) {
-		console.log(response);
+		console.log('-----------------------------');
+		console.log(response.user.name);
+		console.log(response.text);
+		console.log(response.user.created_at);
+		console.log('-----------------------------');
 	})
 
 }
