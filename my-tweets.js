@@ -1,19 +1,18 @@
+const twitter = require('twitter');
+const keys = require('./keys.js');
+
 const showTweets = function() {
 
-	const queryURL = "https://api.twitter.com/1.1/statuses/user_timeline.json?mattcuteri=twitterapi&count=20&";
+	// let count = 0,
+	// 	util = require('util');;
 
-	$.ajax({
-		url: queryURL,
-		method: "GET"
-	})
-
-	.done(function(response) {
-		console.log('-----------------------------');
-		console.log(response.user.name);
-		console.log(response.text);
-		console.log(response.user.created_at);
-		console.log('-----------------------------');
-	})
+	client.stream('filter', (track = 'love'), function(stream) {
+		stream.on('data', function(data) {
+			console.log(util.inspect(data));
+			stream.destroy();
+			process.exit(0);
+		});
+	});
 
 }
 
