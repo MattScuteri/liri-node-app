@@ -3,8 +3,8 @@ const keys = require('./keys.js');
 
 const showTweets = function() {
 
-	// let count = 0,
-	// 	util = require('util');;
+	let count = 0,
+		util = require('util');
 
 	client.stream('filter', (track = 'love'), function(stream) {
 		stream.on('data', function(data) {

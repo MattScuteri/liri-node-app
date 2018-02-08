@@ -2,6 +2,7 @@ require("dotenv").config();
 
 const keys = require('./keys.js')
 const showTweets = require('./my-tweets.js')
+const spotifyThis = require('./spotify-this-song.js')
 
 const Twitter = require('twitter');
 const Spotify = require('node-spotify-api');
