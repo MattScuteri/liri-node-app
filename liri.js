@@ -3,6 +3,8 @@ require("dotenv").config();
 const keys = require('./keys.js')
 const showTweets = require('./my-tweets.js')
 const spotifyThis = require('./spotify-this-song.js')
+const movieThis = require('./movie-this.js')
+const random = require('./do-what-it-says.js')
 
 const Twitter = require('twitter');
 const Spotify = require('node-spotify-api');
