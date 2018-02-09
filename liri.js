@@ -19,14 +19,12 @@ if (process.argv[2] === "my-tweets") {
 
 if (process.argv[2] === "spotify-this-song") {
 	spotifyThis();
-} else {
-	process.argv[2] === "I Want It That Way";
-} 
+}
 
 if (process.argv[2] === "movie-this") {
 	movieThis();
 } else {
-	process.argv === "Mr. Nobody";
+	process.argv[2] === "Mr. Nobody";
 }
 
 if (process.argv[2] === "do-what-it-says") {
