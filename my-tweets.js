@@ -1,18 +1,15 @@
-const twitter = require('twitter');
+const Twitter = require('twitter');
 const keys = require('./keys.js');
 
 const showTweets = function() {
 
-	let count = 0,
-		util = require('util');
+	var client = new Twitter(
+ 		keys.twitter
+	);
 
-	client.stream('filter', (track = 'love'), function(stream) {
-		stream.on('data', function(data) {
-			console.log(util.inspect(data));
-			stream.destroy();
-			process.exit(0);
-		});
-	});
+	client.get('search/tweets', {q: 'node.js'}, function(error, tweets, response) {
+   console.log(tweets);
+});
 
 }
 
