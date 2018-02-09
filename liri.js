@@ -17,14 +17,18 @@ if (process.argv[2] === "my-tweets") {
 	showTweets();
 } 
 
-if (process.argv[2] === "spotify-this-song") {
+if (process.argv[2] === "spotify-this-song" && process.argv[3] !== null) {
+	spotifyThis();
+} else {
+	process.argv[2] === "spotify-this-song" && process.argv[3] === "The Sign";
 	spotifyThis();
 }
 
-if (process.argv[2] === "movie-this") {
+if (process.argv[2] === "movie-this" && process.argv[3] !== null) {
 	movieThis();
 } else {
-	process.argv[2] === "Mr. Nobody";
+	process.argv[2] === "movie-this" && process.argv[3] === "Mr. Nobody";
+	movieThis();
 }
 
 if (process.argv[2] === "do-what-it-says") {
