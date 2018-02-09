@@ -14,7 +14,7 @@ const spotifyThis = function() {
 		let songs = data.tracks.items;
 		for (i = 0; i < songs.length; i++) {
 			console.log("Song: " + songs[i].name);
-			console.log("Artist: " + songs[i].artists.name);
+			console.log("Artist: " + songs[i].artists[0].name);
 			console.log("Album: " + songs[i].album.name);
 			console.log("Preview link: " + songs[i].preview_url);
 		}
