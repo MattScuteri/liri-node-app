@@ -2,6 +2,11 @@ const omdb = require('omdb');
 const keys = require('./keys.js');
 
 const movieThis = function() {
+
+	var omdb = new omdb (
+		keys.omdb
+	) 
+
 	omdb.get({title: process.argv[3]}, true, function(err, movie) {
 		if(err) {
 			return console.log(err);

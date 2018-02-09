@@ -15,11 +15,21 @@ var client = new Twitter(keys.twitter);
 
 if (process.argv[2] === "my-tweets") {
 	showTweets();
-} else if (process.argv[2] === "spotify-this-song") {
+} 
+
+if (process.argv[2] === "spotify-this-song") {
 	spotifyThis();
-} else if (process.argv[2] === "movie-this") {
+} else {
+	process.argv[2] === "I Want It That Way";
+} 
+
+if (process.argv[2] === "movie-this") {
 	movieThis();
-} else if (process.argv[2] === "do-what-it-says") {
+} else {
+	process.argv === "Mr. Nobody";
+}
+
+if (process.argv[2] === "do-what-it-says") {
 	random();
 };
 
