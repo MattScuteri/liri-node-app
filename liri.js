@@ -13,27 +13,25 @@ const omdb = require('omdb');
 var spotify = new Spotify(keys.spotify);
 var client = new Twitter(keys.twitter);
 
-if (process.argv[2] === "my-tweets") {
-	showTweets();
-} 
+let argOne = process.argv[2];
+let  argTwo = process.argv[3]
 
-if (process.argv[2] === "spotify-this-song" && process.argv[3] !== null) {
-	spotifyThis();
-} else {
-	process.argv[2] === "spotify-this-song" && process.argv[3] === "The Sign";
-	spotifyThis();
+switch(argOne) {
+	case "my-tweets":
+		showTweets();
+	break;
+	case "spotify-this-song":
+		spotifyThis();
+	break;
+	case "movie-this":
+		movieThis();
+	case "do-what-it-says":
+		random();
+	break;
+
+	default:
+		console.log("Try again!");
 }
-
-if (process.argv[2] === "movie-this" && process.argv[3] !== null) {
-	movieThis();
-} else {
-	process.argv[2] === "movie-this" && process.argv[3] === "Mr. Nobody";
-	movieThis();
-}
-
-if (process.argv[2] === "do-what-it-says") {
-	random();
-};
 
 // commands:
 // my-tweets - show last 20 tweets and when they were created

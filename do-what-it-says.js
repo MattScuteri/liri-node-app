@@ -21,13 +21,23 @@ const random = function() {
 		const command = output[0];
 		const query = output[1];
 
-		if (command === "spotify-this-song") {
-			spotifyThis();
+		const doThis = function(firstOne, secondOne) {
+			switch(firstOne) {			
+				case "my-tweets":
+					showTweets();
+				break;
+				case "spotify-this-song":
+					spotifyThis();
+				break;
+				case "movie-this":
+					movieThis();
+				case "do-what-it-says":
+					random();
+				break;
 
-		} else if (command === "my-tweets") {			
-			showTweets();
-		} else if (command === "movie-this") {		
-			movieThis(query);
+			default:
+				console.log("Try again!");
+		};
 		};
 
 		// console.log(output);
@@ -35,7 +45,7 @@ const random = function() {
 		console.log(query);
 
 		// for (let i = 0; i < output.length; i++) {
-			// process.argv.push(command);
+			// process.argv[2].push(command);
 			// process.argv.push(query);
 			// console.log(process.argv[3] + process.argv[4]);
 		// }
