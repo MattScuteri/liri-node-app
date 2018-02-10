@@ -13,25 +13,32 @@ const omdb = require('omdb');
 var spotify = new Spotify(keys.spotify);
 var client = new Twitter(keys.twitter);
 
-let argOne = process.argv[2];
-let  argTwo = process.argv[3]
+const doThis = function(argOne, argTwo) {
+	switch(argOne) {
+		case "my-tweets":
+			showTweets();
+		break;
+		case "spotify-this-song":
+			spotifyThis(argTwo);
+		break;
+		case "movie-this":
+			movieThis(argTwo);
+		case "do-what-it-says":
+			random();
+		break;
 
-switch(argOne) {
-	case "my-tweets":
-		showTweets();
-	break;
-	case "spotify-this-song":
-		spotifyThis();
-	break;
-	case "movie-this":
-		movieThis();
-	case "do-what-it-says":
-		random();
-	break;
-
-	default:
-		console.log("Try again!");
+		default:
+			console.log("Try again!");
+	}
 }
+
+const assignArgs = function(argOne, argTwo) {
+	doThis(argOne, argTwo);
+}
+
+assignArgs(process.argv[2], process.argv[3]);
+
+//module.exports = doThis;
 
 // commands:
 // my-tweets - show last 20 tweets and when they were created

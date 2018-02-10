@@ -2,9 +2,13 @@ const omdb = require('omdb');
 const request = require('request');
 const keys = require('./keys.js');
 
-const movieThis = function() {
+const movieThis = function(film) {
 
 	const queryURL = "http://www.omdbapi.com/?t=" + process.argv[3] + "&y=&plot=short&apikey=trilogy";
+
+	if (film === undefined) {
+		film === "Mr. Nobody"
+	};
 
 	request(queryURL, function(error, response, body) {
 		if (!error && response && response.statusCode) {

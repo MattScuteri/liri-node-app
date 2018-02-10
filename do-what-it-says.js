@@ -3,6 +3,7 @@ const keys = require('./keys.js')
 const showTweets = require('./my-tweets.js')
 const spotifyThis = require('./spotify-this-song.js')
 const movieThis = require('./movie-this.js')
+const doThis = require('./liri.js')
 
 const Twitter = require('twitter');
 const Spotify = require('node-spotify-api');
@@ -21,34 +22,11 @@ const random = function() {
 		const command = output[0];
 		const query = output[1];
 
-		const doThis = function(firstOne, secondOne) {
-			switch(firstOne) {			
-				case "my-tweets":
-					showTweets();
-				break;
-				case "spotify-this-song":
-					spotifyThis();
-				break;
-				case "movie-this":
-					movieThis();
-				case "do-what-it-says":
-					random();
-				break;
-
-			default:
-				console.log("Try again!");
-		};
-		};
-
-		// console.log(output);
-		console.log(command);
-		console.log(query);
-
-		// for (let i = 0; i < output.length; i++) {
-			// process.argv[2].push(command);
-			// process.argv.push(query);
-			// console.log(process.argv[3] + process.argv[4]);
-		// }
+		if (output.length === 2) {
+			doThis(output[0], output[1]);
+		} else if (output.length === 1) {
+			doThis(output[0])
+		}
 	})
 }
 
