@@ -23,6 +23,7 @@ const doThis = function(argOne, argTwo) {
 		break;
 		case "movie-this":
 			movieThis(argTwo);
+		break;
 		case "do-what-it-says":
 			random();
 		break;
@@ -36,9 +37,10 @@ const assignArgs = function(argOne, argTwo) {
 	doThis(argOne, argTwo);
 }
 
+module.exports = doThis;
+
 assignArgs(process.argv[2], process.argv[3]);
 
-//module.exports = doThis;
 
 // commands:
 // my-tweets - show last 20 tweets and when they were created

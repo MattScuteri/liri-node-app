@@ -8,7 +8,7 @@ const spotifyThis = function(song) {
 	)
 
 	if (song === undefined) {
-		song = "The Sign";
+		song = "Ace of Base";
 	}
 
 	spotify.search(

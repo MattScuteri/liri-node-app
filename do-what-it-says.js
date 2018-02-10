@@ -3,7 +3,7 @@ const keys = require('./keys.js')
 const showTweets = require('./my-tweets.js')
 const spotifyThis = require('./spotify-this-song.js')
 const movieThis = require('./movie-this.js')
-const doThis = require('./liri.js')
+// const doThis = require('./liri.js')
 
 const Twitter = require('twitter');
 const Spotify = require('node-spotify-api');
@@ -11,6 +11,26 @@ const omdb = require('omdb');
 
 var spotify = new Spotify(keys.spotify);
 var client = new Twitter(keys.twitter);
+
+const doThis = function(argOne, argTwo) {
+	switch(argOne) {
+		case "my-tweets":
+			showTweets();
+		break;
+		case "spotify-this-song":
+			spotifyThis(argTwo);
+		break;
+		case "movie-this":
+			movieThis(argTwo);
+		break;
+		case "do-what-it-says":
+			random();
+		break;
+
+		default:
+			console.log("Try again!");
+	}
+}
 
 const random = function() {
 	fs.readFile('random.txt', 'utf8', function(err, data) {
